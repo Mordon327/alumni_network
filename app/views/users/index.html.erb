@@ -17,17 +17,6 @@
       <td>
         <%= link_to "Edit", edit_user_registration_path(user) %>
       </td>
-      
-      <td>
-        <%= link_to profiles.status, toggle_status_profile_path(user) %>
-      </td>
-      <td>
-        <%= link_to profiles.active, toggle_active_profile_path(user) %>
-      </td>
-      
-      <td>
-        <%= link_to profiles.work, toggle_work_profile_path(user) %>
-      </td>
     </tr>
   <% end %>
 </table>

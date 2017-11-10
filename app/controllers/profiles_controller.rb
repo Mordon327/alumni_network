@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_action :set_profile, only: [:index, :show, :destroy, :update, :edit]
+  before_action :set_profile, only: [:show, :destroy, :update, :edit, :toggle_status, :toggle_activity, :toggle_work]
 
 
 	  def show
@@ -7,6 +7,7 @@ class ProfilesController < ApplicationController
     end
 
     def index
+    	@profile = Profile.all
     end
     
     def edit
@@ -58,33 +59,33 @@ class ProfilesController < ApplicationController
     end
 
 	def toggle_status
-		byebug
-		if @profiles.alumni
-			@profiles.student
-		elsif @profiles.student
-			@profiles.alumni
+		
+		if @profile.alumni?
+			@profile.student!
+		elsif @profile.student?
+			@profile.alumni!
 		end
 		redirect_to profile_url, notice: 'Profile status has been updated.'
 	end
 
 	def toggle_activity
-		if @profiles.active
-			@profiles.not_active
-		elsif @profiles.not_active
-			@profiles.active
+		if @profile.active?
+			@profile.not_active!
+		elsif @profile.not_active?
+			@profile.active!
 		end
 		redirect_to profile_url, notice: 'Profile status has been updated.'
 	end
 
 	def toggle_work
-		if @profiles.full_time
-			@profiles.contract
+		if @profile.full_time?
+			@profile.contract!
 
-		elsif @profiles.contract
-			@profiles.part_time
+		elsif @profile.contract?
+			@profile.part_time!
 
-		elsif @profiles.part_time
-			@profiles.full_time
+		elsif @profile.part_time?
+			@profile.full_time!
 		end
 		redirect_to profile_url, notice: 'Profile status has been updated.'
 	end

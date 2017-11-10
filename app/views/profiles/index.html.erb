@@ -1,0 +1,8 @@
+
+<% @profile.each do |profiles| %>
+<div>
+<%= link_to profiles.status, toggle_status_profile_path(profiles) %>
+<%= link_to profiles.current_activity, toggle_activity_profile_path(profiles) %>
+<%= link_to profiles.work_status, toggle_work_profile_path(profiles) %>
+</div>
+<% end %>
