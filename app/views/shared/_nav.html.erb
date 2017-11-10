@@ -3,8 +3,10 @@
     <a href="<%= root_path %>" class="brand-logo"><%= image_tag('devcamplogo.jpg', size: '205x53', class: "responsive-img hide-on-small-and-down") %><%= image_tag('devcamplogo.jpg', size: '180x28', class: "responsive-img hide-on-med-and-up") %></a>
     <a href="#!" data-activates="mobile-demo" class="button-collapse"><i class="material-icons black-text">menu</i></a>
     <ul class="right hide-on-med-and-down">
+     <li><%= link_to 'Home', root_path, :class => "black-text" %></li>
      <li><%= sign_in(current_user) %></li>
     </ul>
     <ul class="side-nav" id="mobile-demo">
      <li><%= sign_in(current_user) %></li>
+     <li></li>
 </nav>

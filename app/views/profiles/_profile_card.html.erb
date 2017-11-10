@@ -3,11 +3,12 @@
     <h2 class="header">Student Profile</h2>
     <div class="card horizontal">
       <div class="card-image">
-        <img src="https://lorempixel.com/100/190/nature/6">
+        <%= image_tag @profile.img %>
+        
       </div>
       <div class="card-stacked">
         <div class="card-content">
-          <p>Student info:  
+          <p>Student info:  <%= "#{@profile.name}" %>
 </p>
         </div>
 
@@ -17,21 +18,21 @@
       <i class="material-icons">assignment_ind</i>
       About Me
       <span class="new badge blue">3</span></div>
-    <div class="collapsible-body"><p>Location, Bio, Interests. Lorem ipsum dolor sit amet.</p></div>
+    <div class="collapsible-body"><p> <%= "#{@profile.about}" %> </p><p><%= @profile.location %> </p> <p><%= @profile.relocation %> </p></div>
   </li>
   <li>
     <div class="collapsible-header">
       <i class="material-icons">call_end</i>
       Contact
       <span class="badge"></span></div>
-    <div class="collapsible-body"><p>Contact Info: email, phone, github, insta, twitter, FB, etc. <br>Reach me at: Lorem ipsum dolor sit amet.</p></div>
+    <div class="collapsible-body"><p> <%= @profile.phone %> </p> <p><%= @profile.email %> </p> </div>
   </li>
   <li>
     <div class="collapsible-header">
       <i class="material-icons">keyboard</i>
       Skills
       <span class="badge"></span></div>
-    <div class="collapsible-body"><p>Skills: Ruby, Rails, Java, C++, Python, Front end/Back end, CSS
+    <div class="collapsible-body"><p><%= @profile.skills %></p>
     
         <div class="card-action">
           <a href="#">GitHub <i class="material-icons circle green">assignment_ind</i> </a>

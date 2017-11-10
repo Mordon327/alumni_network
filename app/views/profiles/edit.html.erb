@@ -1,0 +1,32 @@
+<%= form_with(model: @profile, local: true) do |f| %>
+  
+  <div class="form-group">
+    <%= f.text_field :name, placeholder: "Student Name" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_area :about, rows: 15, placeholder: "Content" %>
+  </div>
+   <div class="form-group">
+    <%= f.text_field :phone, placeholder: "phone number" %>
+  </div>
+   <div class="form-group">
+    <%= f.text_field :email, placeholder: "Email" %>
+  </div>
+   <div class="form-group">
+    <%= f.text_field :location, placeholder: "location" %>
+  </div>
+    <div class="form-group">
+    <%= f.text_field :relocation, placeholder: "Willing to relocate" %>
+  </div>
+    <div class="form-group">
+    <%= f.text_field :skills, placeholder: "Skills" %>
+  </div>
+    <div class="form-group">
+    <%= f.text_field :img, placeholder: "img" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>
