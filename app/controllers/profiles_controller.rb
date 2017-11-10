@@ -16,31 +16,35 @@ class ProfilesController < ApplicationController
     end
 
 	def toggle_status
-		if @profile.alumni
-			@profile.student
-		elsif @profile.student
-			@profile.alumni
+		byebug
+		if @profiles.alumni
+			@profiles.student
+		elsif @profiles.student
+			@profiles.alumni
 		end
+		redirect_to profile_url, notice: 'Profile status has been updated.'
 	end
 
 	def toggle_activity
-		if @profile.active
-			@profile.not_active
-		elsif @profile.not_active
-			@profile.active
+		if @profiles.active
+			@profiles.not_active
+		elsif @profiles.not_active
+			@profiles.active
 		end
+		redirect_to profile_url, notice: 'Profile status has been updated.'
 	end
 
 	def toggle_work
-		if @profile.full_time
-			@profile.contract
+		if @profiles.full_time
+			@profiles.contract
 
-		elsif @profile.contract
-			@profile.part_time
+		elsif @profiles.contract
+			@profiles.part_time
 
-		elsif @profile.part_time
-			@profile.full_time
+		elsif @profiles.part_time
+			@profiles.full_time
 		end
+		redirect_to profile_url, notice: 'Profile status has been updated.'
 	end
 
 end
